@@ -1,0 +1,18 @@
+# Setup
+title: "Ali Saadat"
+url: "https://ali36saadat.github.io"
+baseurl: ""
+paginate: 5
+
+# About and contact
+author:
+  name:           'Mark Otto'
+  url:            https://twitter.com/mdo
+
+# Gems
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
+
+# Custom vars
+version:          3.0.0
