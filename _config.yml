@@ -1,18 +1,29 @@
 # Setup
 title: "Ali Saadat"
+description: "Ali Saadat's personal website"
 url: "https://ali36saadat.github.io"
 baseurl: ""
-paginate: 5
 
-# About and contact
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name: 'Ali Saadat'
+  url:  https://x.com/ali36saadat
 
 # Gems
 plugins:
-  - jekyll-paginate
   - jekyll-gist
+
+collections:
+  pages:
+    output: true
+    permalink: /pages/:slug/
+
+permalink: /repositories/:title/
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
 
 # Custom vars
 version:          3.0.0
