@@ -1,37 +1,60 @@
 ---
 layout: default
 title: Home
+backcolor: "#ECECEC"
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url | absolute_url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+  <div class="posts">
+  <h2>Repositories</h2>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+  {% assign repositories = site.posts | where_exp: "post", "post.categories contains 'repositories'" %}
 
-    {{ post.content }}
-  </div>
+  {% for post in repositories limit:3 %}
+
+    <div class="post-home">
+        <a class="" href="{{ post.url | relative_url }}">
+
+      <img class="img-post" src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+      <h3 class="post-title">
+          {{ post.title }}
+      </h3>
+      <span class="post-home-date">
+        {{ post.date | date_to_string }}
+      </span>
+        </a>
+
+    </div>
+
   {% endfor %}
+
+  <a class="button" href="{{ '/repositories/' | relative_url }}">
+    View all repositories
+  </a>
 </div>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ '/' | absolute_url }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | absolute_url }}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
+
+<div class="posts">
+  <h2>Posts</h2>
+
+  {% assign posts = site.posts | where_exp: "post", "post.categories contains 'posts'" %}
+
+  {% for post in posts limit:3 %}
+    <div class="post-home">
+        <a class="" href="{{ post.url | relative_url }}">
+
+      <img class="img-post" src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+      <h3 class="post-title">
+          {{ post.title }}
+      </h3>
+      <span class="post-home-date">
+        {{ post.date | date_to_string }}
+      </span>
+        </a>
+
+    </div>
+  {% endfor %}
+
+  <a class="button" href="{{ '/posts/' | relative_url }}">
+    View all posts
+  </a>
 </div>
