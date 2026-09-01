@@ -1,0 +1,28 @@
+# Setup
+title: "Ali Saadat"
+description: "Personal Website"
+url: "https://ali36saadat.github.io"
+baseurl: ""
+
+author:
+  name: 'Ali Saadat'
+
+# Gems
+plugins:
+  - jekyll-gist
+
+collections:
+  pages:
+    output: true
+    permalink: /pages/:slug/
+
+permalink: /repositories/:title/
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+
+# Custom vars
+version:  3.0.0

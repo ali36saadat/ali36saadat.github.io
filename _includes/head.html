@@ -1,0 +1,19 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.excerpt | default: site.description }}">
+
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }}
+    {% else %}
+      {{ page.title }}
+    {% endif %}
+  </title>
+
+  <link rel="stylesheet" href="{{ 'assets/css/style.css' | absolute_url }}">
+
+  <link rel="icon" href="{{ '/assets/favicon.ico' | absolute_url }}">
+  <atom:link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/rss+xml" />
+</head>
+
