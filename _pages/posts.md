@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /posts
+backcolor: "#ECECEC"
 ---
 
 <div>

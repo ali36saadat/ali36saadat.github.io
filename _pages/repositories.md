@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /repositories/
+backcolor: "#ECECEC"
 ---
 
 <div>
