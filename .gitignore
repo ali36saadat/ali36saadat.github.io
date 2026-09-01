@@ -43,3 +43,5 @@ node_modules
 Gemfile.lock
 _posts/*
 _drafts/*
+
+README.md
