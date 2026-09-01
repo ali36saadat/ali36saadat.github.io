@@ -5,6 +5,7 @@
 !_posts/*
 !assets
 !assets/image
+!assets/image/*
 
 
 README.md
