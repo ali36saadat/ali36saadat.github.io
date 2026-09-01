@@ -6,6 +6,7 @@
 !assets
 !assets/image
 !assets/image/*
+!.gitattributes
 
 
 README.md
