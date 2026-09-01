@@ -16,6 +16,7 @@ gem install jekyll bundler
 2: Add posts to the theme
 ```bash
 git diff --name-only --diff-filter=A HEAD..content -- _posts | xargs git checkout content --; git restore --staged _posts
+git diff --name-only --diff-filter=A HEAD..content -- assets/image | xargs git checkout content --; git restore --staged assets/image
 ```
 3: Run Jekyll
 ```
