@@ -4,7 +4,7 @@ layout: default
 
 <div class="post">
     <span>
-    <img src="{{ page.image }}" alt="Ali Saadat" class="page-avatar">
+    <img src="{{ page.image | relative_url }}" alt="Ali Saadat" class="page-avatar">
   </span>
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }}</span>
