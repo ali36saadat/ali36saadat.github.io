@@ -1,12 +1,11 @@
 # Setup
 title: "Ali Saadat"
-description: "Ali Saadat's personal website"
+description: "Personal Website"
 url: "https://ali36saadat.github.io"
 baseurl: ""
 
 author:
   name: 'Ali Saadat'
-  url:  https://x.com/ali36saadat
 
 # Gems
 plugins:
@@ -26,4 +25,4 @@ defaults:
       image: true
 
 # Custom vars
-version:          3.0.0
+version:  3.0.0
