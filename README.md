@@ -1,5 +1,5 @@
 ## MY PERSONAL WEBSITE - ASTERSIK THEME
-![REINFORCEMENT LEARNING - Headder](https://github.com/user-attachments/assets/fc926234-6bd1-4735-8690-2ae3bc33b373)
+![MY PERSONAL WEBSITE - Headder](https://github.com/user-attachments/assets/fc926234-6bd1-4735-8690-2ae3bc33b373)
 
 ## Usage
 **Requirements:** `ruby` 2.7.0 or higher, GCC and Make (check versions using `gcc -v`,`g++ -v`, and `make -v`)
@@ -19,6 +19,6 @@ git diff --name-only --diff-filter=A HEAD..content -- _posts | xargs git checkou
 ```
 3: Run Jekyll
 ```
-bundle exec jekyll serve --draft --livereload
+bundle exec jekyll serve
 ```
 4: Browse to http://localhost:4000 ( or http://127.0.0.1:4000 )
