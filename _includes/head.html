@@ -2,15 +2,14 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ page.excerpt | default: site.description }}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | base_url }}">
-  <!-- <link rel="stylesheet" href="{{ 'assets/css/style.css' | prepend: site.baseurl}}"> -->
   <link rel="icon" href="{{ '/assets/favicon.ico' | prepend: site.baseurl  }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <atom:link href="{{ '/feed.xml' | prepend: site.baseurl  }}" rel="self" type="application/rss+xml" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
-  <title>
+    <title>
     {% if page.title == "Home" %}
       {{ site.title }}
     {% else %}

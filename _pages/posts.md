@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /posts
+permalink: /posts/
 backcolor: "#ECECEC"
 ---
 
