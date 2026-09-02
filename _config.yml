@@ -14,9 +14,9 @@ plugins:
 collections:
   pages:
     output: true
-    permalink: /pages/:slug/
+    permalink: /:categories/:slug/
 
-permalink: /repositories/:title/
+permalink: /:categories/:title/
 
 defaults:
   - scope:

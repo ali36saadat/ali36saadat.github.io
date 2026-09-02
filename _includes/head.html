@@ -3,6 +3,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ page.excerpt | default: site.description }}">
 
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | base_url }}">
+  <!-- <link rel="stylesheet" href="{{ 'assets/css/style.css' | prepend: site.baseurl}}"> -->
+  <link rel="icon" href="{{ '/assets/favicon.ico' | prepend: site.baseurl  }}">
+  <atom:link href="{{ '/feed.xml' | prepend: site.baseurl  }}" rel="self" type="application/rss+xml" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
   <title>
     {% if page.title == "Home" %}
       {{ site.title }}
@@ -10,10 +17,4 @@
       {{ page.title }}
     {% endif %}
   </title>
-
-  <link rel="stylesheet" href="{{ 'assets/css/style.css' | absolute_url }}">
-
-  <link rel="icon" href="{{ '/assets/favicon.ico' | absolute_url }}">
-  <atom:link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/rss+xml" />
 </head>
-
