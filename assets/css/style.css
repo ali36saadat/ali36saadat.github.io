@@ -686,7 +686,7 @@ a.sidebar-nav-item:focus {
 
   /* keep sidebar fixed but ensure comfortable content width */
   .sidebar {
-    width: 18rem;
+    width: 30vw;
     padding: 1.5rem 1rem;
   }
 
@@ -806,4 +806,82 @@ ul {
 
 ul li {
   display: block;
+}
+
+
+.sidebar-toggle {
+  display: none;
+}
+
+.sidebar-toggle-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.sidebar-toggle-button span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--sidebar-color);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sidebar {
+  transition: transform 0.25s ease;
+}
+
+/* Closed */
+.sidebar-toggle:checked ~ .container {
+  transform: translateX(-100%);
+}
+
+.sidebar-toggle:checked ~ .sidebar-toggle-button span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.sidebar-toggle:checked ~ .sidebar-toggle-button span:nth-child(2) {
+  opacity: 0;
+}
+
+.sidebar-toggle:checked ~ .sidebar-toggle-button span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.sidebar-toc {
+  margin-top: 30px;
+  color: #ffffff;
+}
+
+.sidebar-toc h3 {
+  /* margin: 0 0 12px; */
+  font-weight: 700;
+}
+
+.sidebar-toc ul {
+  margin: 0;
+}
+
+.sidebar-toc li {
+  display: list-item;
+  margin: 6px 0;
+}
+
+.sidebar-toc a {
+  text-decoration: none;
+}
+
+.sidebar-toc ol {
+  padding: 0 1rem;
 }
