@@ -1,6 +1,20 @@
 <div class="sidebar" style="--sidebar-color: {{ page.color | default: '#141414' }};">
-  <div class="container sidebar-sticky">
 
+
+  <div class="container sidebar-toc">
+    <span>Content</span>
+    {% if page.layout == "post" %}
+      {% toc %}
+    {% endif %}
+  </div>
+
+
+  <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
+  <label for="sidebar-toggle" class="sidebar-toggle-button" aria-label="Toggle sidebar">
+      ☰
+  </label>
+
+  <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <h1>
           {{ site.title }}
