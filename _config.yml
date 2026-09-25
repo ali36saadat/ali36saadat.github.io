@@ -24,5 +24,13 @@ defaults:
     values:
       image: true
 
+plugins:
+  - jekyll-toc
+
+toc:
+  min_level: 3
+  max_level: 3
+  ordered_list: true
+
 # Custom vars
 version:  3.0.0
