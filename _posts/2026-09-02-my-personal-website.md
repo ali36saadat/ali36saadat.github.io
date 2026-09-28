@@ -1,59 +1,30 @@
 ---
 layout: post
-title:  "MY PERSONAL WEBSITE"
-excerpt: ""
-image: "assets/image/hi-there.png"
-backcolor: "#F5F5F5"
-date: 2026-09-02
-categories: posts
+title:  "Guess Game"
+excerpt: "This is the game project that build by what I'm learning so far about Javascript DOM"
+image: "assets/image/guess-game.png"
+color: "#F0F6FD"
+backcolor: "#0C1017"
+date: 2023-11-23
+categories: repositories
 toc: true
 ---
 
-### Ali36Saadat.github.io
-<<<<<<< HEAD
-Hi there. It's my website. I build with [Jekyll](https://jekyllrb.com). I genuinely think this is the best way to build personal website. No vibe coding ( after using 2B tokens ). No 36 Javascript libraries. Just HTML and CSS, doing their job ( It’s responsive too ). Fast and simple, and 100 performance score on Lighthouse. This is a [MF’s website](https://motherfuckingwebsite.com). Thanks for reading.
+### Description
+This project is related to section 7 of [Jonas's course](https://www.udemy.com/course/the-complete-javascript-course), focusing on working with the Document Object Model (DOM). Additionally, it includes two exciting extra games.
 
- **[REPO LINK](https://github.com/ali36saadat/ali36saadat.github.io)**
-=======
+### Usage
+**Requirements:** None ( but [`live-server`](https://www.npmjs.com/package/live-server) is recommended )
 
-Hi there. it's my website. After seeing [Karpathy’s blog](https://karpathy.github.io), I decided to build mine with Jekyll too. I genuinely think this is the best way to build your personal website. No vibe coding. No 36 JavaScript libraries. Just HTML and CSS, doing their job ( It’s responsive too ). Fast and simple, and 100 performance score on Lighthouse. This is a [MF’s website](https://motherfuckingwebsite.com). Thanks for reading.
-2026-09-01-my-personal-website
- **[REPO LINK](https://motherfuckingwebsite.com)**
-
-
-### REZA
-
-Hi there. it's my website. After seeing [Karpathy’s blog](https://karpathy.github.io), I decided to build mine with Jekyll too. I genuinely think this is the best way to build your personal website. No vibe coding. No 36 JavaScript libraries. Just HTML and CSS, doing their job ( It’s responsive too ). Fast and simple, and 100 performance score on Lighthouse. This is a [MF’s website](https://motherfuckingwebsite.com). Thanks for reading.
-2026-09-01-my-personal-website
- **[REPO LINK](https://motherfuckingwebsite.com)**
-
-
-### MAMAD
-
-Hi there. it's my website. After seeing [Karpathy’s blog](https://karpathy.github.io), I decided to build mine with Jekyll too. I genuinely think this is the best way to build your personal website. No vibe coding. No 36 JavaScript libraries. Just HTML and CSS, doing their job ( It’s responsive too ). Fast and simple, and 100 performance score on Lighthouse. This is a [MF’s website](https://motherfuckingwebsite.com). Thanks for reading.
-2026-09-01-my-personal-website
- **[REPO LINK](https://motherfuckingwebsite.com)**
-
-
-
-
-### ASGHAR
-
-Hi there. it's my website. After seeing [Karpathy’s blog](https://karpathy.github.io), I decided to build mine with Jekyll too. I genuinely think this is the best way to build your personal website. No vibe coding. No 36 JavaScript libraries. Just HTML and CSS, doing their job ( It’s responsive too ). Fast and simple, and 100 performance score on Lighthouse. This is a [MF’s website](https://motherfuckingwebsite.com). Thanks for reading.
-2026-09-01-my-personal-website
- **[REPO LINK](https://motherfuckingwebsite.com)**
-
-
-### IMAN
-
-Hi there. it's my website. After seeing [Karpathy’s blog](https://karpathy.github.io), I decided to build mine with Jekyll too. I genuinely think this is the best way to build your personal website. No vibe coding. No 36 JavaScript libraries. Just HTML and CSS, doing their job ( It’s responsive too ). Fast and simple, and 100 performance score on Lighthouse. This is a [MF’s website](https://motherfuckingwebsite.com). Thanks for reading.
-2026-09-01-my-personal-website
- **[REPO LINK](https://motherfuckingwebsite.com)**
-
-
-### MOHSEN
-
-Hi there. it's my website. After seeing [Karpathy’s blog](https://karpathy.github.io), I decided to build mine with Jekyll too. I genuinely think this is the best way to build your personal website. No vibe coding. No 36 JavaScript libraries. Just HTML and CSS, doing their job ( It’s responsive too ). Fast and simple, and 100 performance score on Lighthouse. This is a [MF’s website](https://motherfuckingwebsite.com). Thanks for reading.
-2026-09-01-my-personal-website
- **[REPO LINK](https://motherfuckingwebsite.com)**
->>>>>>> c761fd6 (Rebase)
+1: Clone
+```bash
+git clone https://github.com/ali36saadat/guess-game.git
+cd guess-game
+```
+2: Run
+```bash
+live-server
+```
+### Links
+ **[DEMO LINK](https://ali36saadat.github.io/guess-game)**  
+ **[REPO LINK](https://github.com/ali36saadat/guess-game)**
