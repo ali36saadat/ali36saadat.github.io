@@ -10,6 +10,7 @@ author:
 # Gems
 plugins:
   - jekyll-gist
+  - jekyll-toc
 
 collections:
   pages:
@@ -23,9 +24,6 @@ defaults:
       path: "assets/img"
     values:
       image: true
-
-plugins:
-  - jekyll-toc
 
 toc:
   min_level: 3
