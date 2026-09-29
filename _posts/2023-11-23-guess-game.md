@@ -25,6 +25,11 @@ cd guess-game
 ```bash
 live-server
 ```
+or
+```bash
+npx live-server
+```
+
 ### Links
  **[DEMO LINK](https://ali36saadat.github.io/guess-game)**  
  **[REPO LINK](https://github.com/ali36saadat/guess-game)**
