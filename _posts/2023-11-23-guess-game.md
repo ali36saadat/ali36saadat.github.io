@@ -14,7 +14,7 @@ toc: true
 This project is related to section 7 of [Jonas's course](https://www.udemy.com/course/the-complete-javascript-course), focusing on working with the Document Object Model (DOM). Additionally, it includes two exciting extra games.
 
 ### Usage
-**Requirements:** None ( but [`live-server`](https://www.npmjs.com/package/live-server) is recommended )
+**Requirements:** None ( but running with [`live-server`](https://www.npmjs.com/package/live-server) is recommended )
 
 1: Clone
 ```bash
