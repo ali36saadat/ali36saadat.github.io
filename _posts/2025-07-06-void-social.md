@@ -10,10 +10,10 @@ categories: repositories
 toc: true
 ---
 
-### Description
+## Description
 Void Social is a social web app built with Angular. It uses Firebase for user authentication and json-server for storing application data, bringing the client-side app together with a lightweight data API.
 
-### Usage
+## Usage
 **Requirements:** `nvm`, `node` and `npm`
 
 1: Clone
@@ -34,5 +34,5 @@ npm install
 ng serve
 ```
 
-### Links
+## Links
  **[REPO LINK](https://github.com/ali36saadat/void-social)**

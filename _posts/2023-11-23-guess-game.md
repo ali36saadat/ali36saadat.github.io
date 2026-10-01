@@ -10,10 +10,10 @@ categories: repositories
 toc: true
 ---
 
-### Description
+## Description
 This project is related to section 7 of [Jonas's course](https://www.udemy.com/course/the-complete-javascript-course), focusing on working with the Document Object Model (DOM). Additionally, it includes two exciting extra games.
 
-### Usage
+## Usage
 **Requirements:** None ( but running with [`live-server`](https://www.npmjs.com/package/live-server) is recommended )
 
 1: Clone
@@ -30,6 +30,6 @@ or
 npx live-server
 ```
 
-### Links
+## Links
  **[DEMO LINK](https://ali36saadat.github.io/guess-game)**  
  **[REPO LINK](https://github.com/ali36saadat/guess-game)**

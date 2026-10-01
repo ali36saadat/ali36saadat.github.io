@@ -10,10 +10,10 @@ categories: repositories
 toc: true
 ---
 
-### Description
+## Description
 This project is related to section 8 of [Jonas's React course](https://www.udemy.com/course/the-ultimate-react-course/), focusing on working with the state, props and events. This is an application for splitting expenses with your friends. You can input the costs, and the application will calculate and inform you
 
-### Usage
+## Usage
 **Requirements:** `node` and `npm`
 
 1: Clone
@@ -30,5 +30,5 @@ npm install
 npm start
 ```
 
-### Links
+## Links
  **[REPO LINK](https://github.com/ali36saadat/eat-n-split)**

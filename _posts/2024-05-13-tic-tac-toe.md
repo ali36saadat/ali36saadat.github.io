@@ -10,10 +10,10 @@ categories: repositories
 toc: true
 ---
 
-### Description
+## Description
 In this project, we implemented the Tic Tac Toe Multiplayer game using JavaScript and Socket IO. The game is designed as a client-server application, with each participant taking on the role of a client. You can play with random players or create a room to play with your friends. During the game, you can communicate with your opponent. You can create a room and invite your friend. The game also includes chat, so you can talk with your opponent while you play. The project brings together the familiar Tic Tac Toe rules and a client-server setup for a shared online game.
 
-### Usage
+## Usage
 **Requirements:** `node` and `npm`
 
 1: Clone
@@ -31,6 +31,6 @@ node app.js
 ```
 4: Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Links
+## Links
  **[DEMO LINK](https://alisaadat-tictactoe.onrender.com)**  
  **[REPO LINK](https://github.com/ali36saadat/tic-tac-toe)**

@@ -10,10 +10,10 @@ categories: repositories
 toc: true
 ---
 
-### Description
+## Description
 Void Management is a backend project for task management, built with NestJS and TypeORM. It exposes CRUD APIs for working with tasks and connects to a PostgreSQL database. The project also includes Swagger API documentation, making it easier to inspect and try the available endpoints.
 
-### Usage
+## Usage
 **Requirements:** `nvm`, `node` and `yarn`
 
 1: Clone
@@ -34,5 +34,5 @@ yarn install
 yarn run start
 ```
 
-### Links
+## Links
  **[REPO LINK](https://github.com/ali36saadat/void-management)**
