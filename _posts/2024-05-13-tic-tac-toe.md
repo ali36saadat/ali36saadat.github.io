@@ -4,7 +4,7 @@ title:  "Tic Tac Toe Multiplayer"
 excerpt: "I made a Tic Tac Toe Multiplayer game with JavaScript and Socket IO for play online"
 image: "assets/image/tic-tac-toe.png"
 color: "#24ACF8"
-backcolor: "#1F7CDC"
+backcolor: "#FFFFFF"
 date: 2024-05-13
 categories: repositories
 toc: true
