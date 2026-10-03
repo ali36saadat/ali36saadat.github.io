@@ -1,27 +1,30 @@
-<div class="sidebar" style="--sidebar-color: {{ page.color | default: '#141414' }};">
-
-
-  <div class="container sidebar-toc">
-    <span>Content</span>
+<div class="sidebar">
+  <div class="mobile-sidebar-controls">
+    <details class="mobile-disclosure mobile-site-menu" name="mobile-sidebar">
+      <summary class="mobile-control mobile-site-toggle">≡ {{ site.title }}</summary>
+      <nav class="mobile-menu-panel" aria-label="Main navigation">
+        <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+        <a class="sidebar-nav-item{% if page.url == '/repositories/' %} active{% endif %}" href="{{ '/repositories/' | relative_url }}">Repositories</a>
+        <a class="sidebar-nav-item{% if page.url == '/posts/' or page.url contains '/posts/' %} active{% endif %}" href="{{ '/posts/' | relative_url }}">Posts</a>
+      </nav>
+    </details>
     {% if page.layout == "post" %}
-      {% toc %}
+      <details class="mobile-disclosure mobile-toc-menu" name="mobile-sidebar">
+        <summary class="mobile-control mobile-toc-toggle">Content ≡</summary>
+        <div class="mobile-toc-panel">
+          {% toc %}
+        </div>
+      </details>
     {% endif %}
   </div>
 
-
-  <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle">
-  <label for="sidebar-toggle" class="sidebar-toggle-button" aria-label="Toggle sidebar">
-      ☰
-  </label>
-
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
+  <div class="sidebar-sticky">
+    <nav class="sidebar-nav" id="site-navigation">
+      <div class="sidebar-about">
+        <h1>
           {{ site.title }}
-      </h1>
-    </div>
-
-    <nav class="sidebar-nav">
+        </h1>
+      </div>
       <a
         class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}"
         href="{{ '/' | relative_url }}">
@@ -40,5 +43,13 @@
         Posts
       </a>
     </nav>
+
+
+    {% if page.layout == "post" %}
+      <nav class="sidebar-toc">
+        <h1 class="sidebar-toc-title">Content</h1>
+        {% toc %}
+      </nav>
+    {% endif %}
   </div>
 </div>

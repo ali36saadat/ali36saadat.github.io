@@ -3,7 +3,7 @@ layout: default
 title: Home
 backcolor: "#ECECEC"
 ---
-<div class="posts">
+<div class="posts-home">
   <h2>Posts</h2>
 
   {% assign posts = site.posts | where_exp: "post", "post.categories contains 'posts'" %}
@@ -26,7 +26,7 @@ backcolor: "#ECECEC"
   </a>
 </div>
 
-<div class="posts">
+<div class="posts-home">
   <h2>Repositories</h2>
 
   {% assign repositories = site.posts | where_exp: "post", "post.categories contains 'repositories'" %}
