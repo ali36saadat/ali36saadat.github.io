@@ -1,0 +1,29 @@
+{% if paginator.total_pages > 1 %}
+<nav class="pagination" aria-label="{{ include.label }}">
+  {% if paginator.page != paginator.first_page %}
+    <a class="pagination-control" href="{{ paginator.first_page_path | relative_url }}" aria-label="First page" title="First page">&laquo;</a>
+  {% else %}
+    <span class="pagination-control is-disabled" aria-disabled="true" aria-label="First page" title="First page">&laquo;</span>
+  {% endif %}
+
+  {% if paginator.previous_page_path %}
+    <a class="pagination-control" href="{{ paginator.previous_page_path | relative_url }}" rel="prev" aria-label="Previous page" title="Previous page">&lsaquo;</a>
+  {% else %}
+    <span class="pagination-control is-disabled" aria-disabled="true" aria-label="Previous page" title="Previous page">&lsaquo;</span>
+  {% endif %}
+
+  <span class="pagination-status" aria-current="page">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+
+  {% if paginator.next_page_path %}
+    <a class="pagination-control" href="{{ paginator.next_page_path | relative_url }}" rel="next" aria-label="Next page" title="Next page">&rsaquo;</a>
+  {% else %}
+    <span class="pagination-control is-disabled" aria-disabled="true" aria-label="Next page" title="Next page">&rsaquo;</span>
+  {% endif %}
+
+  {% if paginator.page != paginator.last_page %}
+    <a class="pagination-control" href="{{ paginator.last_page_path | relative_url }}" aria-label="Last page" title="Last page">&raquo;</a>
+  {% else %}
+    <span class="pagination-control is-disabled" aria-disabled="true" aria-label="Last page" title="Last page">&raquo;</span>
+  {% endif %}
+</nav>
+{% endif %}
