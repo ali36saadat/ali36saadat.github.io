@@ -804,6 +804,13 @@ ul li {
   display: block;
 }
 
+.section-nav ul {
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding-left: 0.5rem;
+  line-height: 1;
+}
+
 @media (min-width: 48em) {
   .mobile-sidebar-controls {
     display: none;
@@ -839,6 +846,7 @@ ul li {
     margin: 0;
     padding: 0;
     list-style: none;
+    padding-left: 0.5rem;
   }
 
   .sidebar-toc li {
@@ -851,6 +859,12 @@ ul li {
     text-decoration: none;
   }
 }
+
+.mobile-toc-panel {
+  display: none;
+    justify-content: center;
+  }
+
 
 @media (max-width: 47.99em) {
   .sidebar {
@@ -897,13 +911,13 @@ ul li {
   .mobile-site-toggle {
     font-family: "Abril Fatface", serif;
     font-size: 1.5rem;
-    line-height: 1.2;
+    line-height: 1;
   }
 
   .mobile-toc-toggle {
     font-family: "Abril Fatface", serif;
     font-size: 1.5rem;
-    line-height: 1.2;
+    line-height: 1;
   }
 
   .mobile-menu-panel,
@@ -922,9 +936,31 @@ ul li {
     width: 100vw;
     max-height: 55vh;
     float: left;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
+  }
+
+  .mobile-site-close {
+    display: none;
+  }
+
+  .mobile-site-open:target {
+    display: none;
+  }
+
+  .mobile-site-open:target ~ .mobile-site-close {
+    display: block;
+  }
+
+  .mobile-site-open:target ~ .mobile-menu-panel {
+    display: flex;
+  }
+
+  .mobile-site-closed-target {
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
   .mobile-toc-panel {
@@ -932,37 +968,63 @@ ul li {
     width: 100vw;
     max-height: 55vh;
     float: left;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
   }
 
+  .mobile-toc-close {
+    display: none;
+  }
+
+  .mobile-toc-open:target {
+    display: none;
+  }
+
+  .mobile-toc-open:target ~ .mobile-toc-close {
+    display: block;
+  }
+
+  .mobile-toc-open:target ~ .mobile-toc-panel {
+    display: flex;
+  }
+
+  .mobile-toc-closed-target {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
   .mobile-toc-panel ul{
     float: right;
+    line-height: 1;
   }
 
   .mobile-menu-panel .sidebar-nav-item,
   .mobile-toc-panel a {
-    display: block;
     padding: 0.35rem 0;
     color: var(--sidebar-text);
-    line-height: 1.5;
+    line-height: 1;
     text-decoration: none;
   }
 
   .mobile-toc-panel ol,
   .mobile-toc-panel ul {
+    font-size: 1.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
     padding: 0;
     list-style: none;
+    gap: 0;
   }
 
   .mobile-toc-panel li {
-    display: block;
     margin: 0.3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .sidebar-about,
@@ -978,4 +1040,14 @@ ul li {
     outline: 2px solid var(--sidebar-text);
     outline-offset: 3px;
   }
+
+  .section-nav ul {
+    padding-left: 0;
+    font-size: 0.8rem;
+  }
 }
+
+.mobile-menu-panel,
+  .mobile-toc-panel {
+    gap: 1rem;
+  }

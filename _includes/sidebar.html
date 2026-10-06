@@ -1,20 +1,24 @@
 <div class="sidebar">
   <div class="mobile-sidebar-controls">
-    <details class="mobile-disclosure mobile-site-menu" name="mobile-sidebar">
-      <summary class="mobile-control mobile-site-toggle">≡ {{ site.title }}</summary>
+    <div class="mobile-disclosure mobile-site-menu">
+      <a class="mobile-control mobile-site-toggle mobile-site-open" id="mobile-site-open" href="#mobile-site-open">≡ {{ site.title }}</a>
+      <a class="mobile-control mobile-site-toggle mobile-site-close" href="#mobile-site-closed">× {{ site.title }}</a>
+      <span class="mobile-site-closed-target" id="mobile-site-closed" aria-hidden="true"></span>
       <nav class="mobile-menu-panel" aria-label="Main navigation">
         <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
         <a class="sidebar-nav-item{% if page.url == '/repositories/' %} active{% endif %}" href="{{ '/repositories/' | relative_url }}">Repositories</a>
         <a class="sidebar-nav-item{% if page.url == '/posts/' or page.url contains '/posts/' %} active{% endif %}" href="{{ '/posts/' | relative_url }}">Posts</a>
       </nav>
-    </details>
+    </div>
     {% if page.layout == "post" %}
-      <details class="mobile-disclosure mobile-toc-menu" name="mobile-sidebar">
-        <summary class="mobile-control mobile-toc-toggle">Content ≡</summary>
+      <div class="mobile-disclosure mobile-toc-menu">
+        <a class="mobile-control mobile-toc-toggle mobile-toc-open" id="mobile-toc-open" href="#mobile-toc-open">Content ≡</a>
+        <a class="mobile-control mobile-toc-toggle mobile-toc-close" href="#mobile-toc-closed">Content ×</a>
+        <span class="mobile-toc-closed-target" id="mobile-toc-closed" aria-hidden="true"></span>
         <div class="mobile-toc-panel">
           {% toc %}
         </div>
-      </details>
+      </div>
     {% endif %}
   </div>
 
