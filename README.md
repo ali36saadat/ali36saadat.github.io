@@ -13,14 +13,14 @@ cd ali36saadat.github.io
 ```
 2: Install the Jekyll and bundler Gems
 ```
-bundle install
-```
-or
-```
 gem install jekyll bundler
+bundle install
 ```
 3: Run Jekyll
 ```
 bundle exec jekyll serve
 ```
 4: Browse to [http://localhost:4000](http://localhost:4000) ( or [http://127.0.0.1:4000](http://127.0.0.1:4000) )
+
+## Links
+ **[POST LINK](https://ali36saadat.github.io/posts/website-with-jekyll)**
