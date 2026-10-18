@@ -70,12 +70,14 @@ jobs:
             "https://raw.githubusercontent.com/$REPO/$BRANCH/README.md" \
             --output /tmp/project-readme.md
 
+
       - name: Update post body
         env:
           POST: ${{ steps.config.outputs.post }}
         run: |
           python - <<'PY'
           import os
+          import re
           from pathlib import Path
 
           post = Path(os.environ["POST"])
@@ -88,21 +90,28 @@ jobs:
 
           content = post.read_text(encoding="utf-8")
 
-          if not content.startswith("---\n"):
-              raise SystemExit("Missing Jekyll front matter")
+          # Match the opening and closing Jekyll front matter delimiters.
+          match = re.match(
+              r"\A---[ \t]*\r?\n.*?^---[ \t]*(?:\r?\n|\Z)",
+              content,
+              flags=re.DOTALL | re.MULTILINE,
+          )
 
-          parts = content.split("---\n", 2)
+          if not match:
+              raise SystemExit(
+                  "Could not parse Jekyll front matter in " + str(post)
+              )
 
-          if len(parts) != 3:
-              raise SystemExit("Could not parse front matter")
+          front_matter = match.group(0)
+          body = readme.lstrip("\r\n")
 
-          updated = f"---\n{parts[1]}---\n{readme.lstrip()}"
+          updated = front_matter + "\n" + body
 
           if updated != content:
               post.write_text(updated, encoding="utf-8")
-              print(f"Updated {post}")
+              print(f"Updated post body: {post}")
           else:
-              print("No changes detected")
+              print("No changes detected.")
           PY
 
       - name: Commit and push
