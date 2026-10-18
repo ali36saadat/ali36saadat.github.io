@@ -1,0 +1,124 @@
+
+name: Sync Project READMEs to Posts
+
+on:
+  repository_dispatch:
+    types: [update-project-post]
+
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "Source repository (owner/repo)"
+        required: true
+        type: string
+      post:
+        description: "Target post path"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-project-posts
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Resolve source and target
+        id: config
+        env:
+          EVENT_REPO: ${{ github.event.client_payload.repo }}
+          EVENT_POST: ${{ github.event.client_payload.post }}
+          INPUT_REPO: ${{ inputs.repo }}
+          INPUT_POST: ${{ inputs.post }}
+        run: |
+          REPO="${EVENT_REPO:-$INPUT_REPO}"
+          POST="${EVENT_POST:-$INPUT_POST}"
+
+          if [[ ! "$REPO" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]; then
+            echo "Invalid repository"
+            exit 1
+          fi
+
+          if [[ ! "$POST" =~ ^_posts/[A-Za-z0-9._/-]+\.md$ ]] ||
+             [[ "$POST" == *..* ]]; then
+            echo "Invalid post path"
+            exit 1
+          fi
+
+          echo "repo=$REPO" >> "$GITHUB_OUTPUT"
+          echo "post=$POST" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout website
+        uses: actions/checkout@v4
+
+      - name: Download source README
+        env:
+          REPO: ${{ steps.config.outputs.repo }}
+        run: |
+          BRANCH=$(curl -fsSL \
+            "https://api.github.com/repos/$REPO" |
+            jq -r '.default_branch')
+
+          test -n "$BRANCH" && test "$BRANCH" != "null"
+
+          curl --fail --silent --show-error --location \
+            "https://raw.githubusercontent.com/$REPO/$BRANCH/README.md" \
+            --output /tmp/project-readme.md
+
+      - name: Update post body
+        env:
+          POST: ${{ steps.config.outputs.post }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+
+          post = Path(os.environ["POST"])
+          readme = Path("/tmp/project-readme.md").read_text(
+              encoding="utf-8"
+          )
+
+          if not post.is_file():
+              raise SystemExit(f"Post not found: {post}")
+
+          content = post.read_text(encoding="utf-8")
+
+          if not content.startswith("---\n"):
+              raise SystemExit("Missing Jekyll front matter")
+
+          parts = content.split("---\n", 2)
+
+          if len(parts) != 3:
+              raise SystemExit("Could not parse front matter")
+
+          updated = f"---\n{parts[1]}---\n{readme.lstrip()}"
+
+          if updated != content:
+              post.write_text(updated, encoding="utf-8")
+              print(f"Updated {post}")
+          else:
+              print("No changes detected")
+          PY
+
+      - name: Commit and push
+        env:
+          POST: ${{ steps.config.outputs.post }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -- "$POST"
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "docs: sync project README to post"
+          git push
