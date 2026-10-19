@@ -76,6 +76,7 @@ jobs:
           POST: ${{ steps.config.outputs.post }}
         run: |
           python - <<'PY'
+          import json
           import os
           import re
           from pathlib import Path
@@ -104,6 +105,52 @@ jobs:
 
           front_matter = match.group(0)
           body = readme.lstrip("\r\n")
+
+          readme_title = None
+          heading_match = re.match(r"\A[ \t]*#[ \t]+([^\r\n]+)\r?\n?", body)
+          if heading_match:
+              readme_title = heading_match.group(1).strip()
+              body = body[heading_match.end():].lstrip("\r\n")
+
+          readme_image = None
+          image_match = re.match(
+              r'''\A\s*<a\b[^>]*>\s*<img\b[^>]*\bsrc=["'](?P<image>[^"']+)["'][^>]*>\s*</a>[ \t]*(?:\r?\n|$)''',
+              body,
+              flags=re.IGNORECASE,
+          )
+          if image_match:
+              readme_image = image_match.group("image")
+              body = body[image_match.end():].lstrip("\r\n")
+
+          for field, value in (("title", readme_title), ("image", readme_image)):
+              if not value:
+                  continue
+
+              field_pattern = re.compile(
+                  rf"(?m)^([ \t]*{re.escape(field)}:[ \t]*)(.*?)[ \t]*$"
+              )
+              field_match = field_pattern.search(front_matter)
+              if not field_match:
+                  continue
+
+              current_value = field_match.group(2)
+              if current_value.startswith('"'):
+                  try:
+                      current_value = json.loads(current_value)
+                  except json.JSONDecodeError:
+                      current_value = current_value.strip('"')
+              elif current_value.startswith("'"):
+                  current_value = current_value[1:-1].replace("''", "'")
+              else:
+                  current_value = current_value.split(" #", 1)[0].strip()
+
+              if value != current_value:
+                  front_matter = field_pattern.sub(
+                      lambda field_match: field_match.group(1)
+                      + json.dumps(value, ensure_ascii=False),
+                      front_matter,
+                      count=1,
+                  )
 
           updated = front_matter + "\n" + body
 
