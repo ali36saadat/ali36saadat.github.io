@@ -2,7 +2,7 @@
 layout: post
 title:  "Ali36Saadat.github.io"
 excerpt: "My Personal Website"
-image: "assets/image/ali36saadat-github-io.png"
+image: "https://github.com/user-attachments/assets/f24f9bb6-63d7-4148-bf7b-b0a8c02f4090"
 color: "#FFFFFF"
 backcolor: "#151515"
 date: 2026-10-06

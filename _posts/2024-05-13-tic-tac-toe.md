@@ -2,7 +2,7 @@
 layout: post
 title:  "Tic Tac Toe Multiplayer"
 excerpt: "I made a Tic Tac Toe Multiplayer game with JavaScript and Socket IO for play online"
-image: "assets/image/tic-tac-toe.png"
+image: "https://github.com/user-attachments/assets/241572b7-6b45-4ac2-beb7-00bf887186f6"
 color: "#24ACF8"
 backcolor: "#FFFFFF"
 date: 2024-05-13

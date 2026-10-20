@@ -2,7 +2,7 @@
 layout: post
 title:  "Arch-itect"
 excerpt: "My Linux configuration files"
-image: "assets/image/arch-itect.png"
+image: "https://github.com/user-attachments/assets/54b8431e-9d50-4167-8000-23d7f62ffc56"
 color: "#1693D1"
 backcolor: "#FFFFFF"
 date: 2026-09-29

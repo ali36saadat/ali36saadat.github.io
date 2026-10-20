@@ -2,7 +2,7 @@
 layout: post
 title:  "Void Management"
 excerpt: "A simple NestJS back-end for task management with TypeORM that provides CRUD Apis"
-image: "assets/image/void-management.png"
+image: "https://github.com/user-attachments/assets/83429eac-368e-48e2-a013-3bc70d9cdf0a"
 color: "#FFFFFF"
 backcolor: "#010100"
 date: 2025-08-02

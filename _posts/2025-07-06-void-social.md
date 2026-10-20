@@ -2,7 +2,7 @@
 layout: post
 title:  "Void Social"
 excerpt: "A simple social web app built with Angular, using Firebase for authentication and json-server for data storage"
-image: "assets/image/void-social.png"
+image: "https://github.com/user-attachments/assets/1d9ed7ca-98bb-4d66-8c37-05400ee6d3e5"
 color: "#FFFFFF"
 backcolor: "#010100"
 date: 2025-07-06

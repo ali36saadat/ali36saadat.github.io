@@ -2,7 +2,7 @@
 layout: post
 title:  "Void Lexer"
 excerpt: "A simple C++ lexical analyzer built with Angular and Electron"
-image: "assets/image/void-lexer.png"
+image: "https://github.com/user-attachments/assets/59182e63-77ac-407b-aafd-03ad1cda8045"
 color: "#FFFFFF"
 backcolor: "#010100"
 date: 2025-01-30

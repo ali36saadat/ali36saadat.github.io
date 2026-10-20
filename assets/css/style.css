@@ -29,7 +29,7 @@ a {
 }
 
 .posts-home {
-  padding-bottom: var(--space-12);
+  padding-bottom: var(--space-4);
 }
 
 .repository-heading,

@@ -2,7 +2,7 @@
 layout: post
 title:  "Eat-'N-Split"
 excerpt: "This is the project that build by what I'm learning so far about State, Props and Events in React"
-image: "assets/image/eat-n-split.png"
+image: "https://github.com/user-attachments/assets/d1bc1c09-8a99-4759-bfb2-c51af1cb40c2"
 color: "#0D1016"
 backcolor: "#F0F6FD"
 date: 2024-04-29

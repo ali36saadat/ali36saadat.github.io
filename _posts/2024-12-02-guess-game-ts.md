@@ -2,7 +2,7 @@
 layout: post
 title:  "Guess Game TypeScript"
 excerpt: "This is the game project that build by what I'm learning so far about Typescript DOM"
-image: "assets/image/guess-game-ts.png"
+image: "https://github.com/user-attachments/assets/5c3fd9d3-63c3-4d53-bfa4-78b28cda7c64"
 color: "#0D1016"
 backcolor: "#F0F6FD"
 date: 2024-12-02

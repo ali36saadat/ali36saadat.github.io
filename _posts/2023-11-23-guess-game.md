@@ -2,7 +2,7 @@
 layout: post
 title:  "Guess Game"
 excerpt: "This is the game project that build by what I'm learning so far about Javascript DOM"
-image: "assets/image/guess-game.png"
+image: "https://github.com/user-attachments/assets/8a93c612-b900-4b4f-9b6c-f5db2d041323"
 color: "#F0F6FD"
 backcolor: "#0C1017"
 date: 2023-11-23
