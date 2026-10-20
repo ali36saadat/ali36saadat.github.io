@@ -2,14 +2,13 @@
 layout: post
 title:  "Tic Tac Toe Multiplayer"
 excerpt: "I made a Tic Tac Toe Multiplayer game with JavaScript and Socket IO for play online"
-image: "https://github.com/user-attachments/assets/241572b7-6b45-4ac2-beb7-00bf887186f6"
-color: "#24ACF8"
+image: "https://i.ibb.co/7d06D1XT/ddd.png"
+color: "#000000"
 backcolor: "#FFFFFF"
 date: 2024-05-13
 categories: repositories
 toc: true
 ---
-
 ## Description
 In this project, we implemented the Tic Tac Toe Multiplayer game using JavaScript and Socket IO. The game is designed as a client-server application, with each participant taking on the role of a client. You can play with random players or create a room to play with your friends. During the game, you can communicate with your opponent. You can create a room and invite your friend. The game also includes chat, so you can talk with your opponent while you play. The project brings together the familiar Tic Tac Toe rules and a client-server setup for a shared online game.
 
