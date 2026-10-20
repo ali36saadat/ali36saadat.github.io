@@ -1,0 +1,97 @@
+:root {
+  /* Typography */
+  --font-body: "Vazirmatn", sans-serif;
+  --font-sidebar: "Noto Serif JP", serif;
+  --font-mono: Menlo, Monaco, "Courier New", monospace;
+  --font-size-base: 16px;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-sidebar-title: 2.25em;
+  --font-size-content-subheading: 0.9rem;
+  --line-height-base: 1.25;
+  --line-height-tight: 1;
+  --line-height-code: 1.4;
+  --line-height-toc: 1.35;
+  --line-height-content-subheading: 1.15;
+  --toc-scroll-offset-mobile: 4rem;
+  --toc-scroll-offset-desktop: 1rem;
+
+  /* Base palette */
+  --color-ink: #171717;
+  --color-white: #ffffff;
+  --color-page: #fafafa;
+  --mix-text: 94%;
+  --mix-heading: 96%;
+  --mix-link: 86%;
+  --mix-muted: 68%;
+  --mix-subtle: 52%;
+  --mix-border: 24%;
+  --mix-background: 4%;
+  --mix-background-strong: 8%;
+  --mix-code: 9%;
+  --mix-syntax-strong: 90%;
+  --mix-syntax-medium: 76%;
+  --mix-syntax-soft: 62%;
+  --mix-syntax-faint: 48%;
+  --mix-sidebar-text: 92%;
+  --mix-sidebar-muted: 68%;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  /* Shape and layout */
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-card: 0.25rem;
+  --content-width: 38rem;
+  --sidebar-width: 18rem;
+  --content-offset: 20rem;
+  --content-offset-wide: 22rem;
+  --content-gutter: 2rem;
+  --content-gutter-wide: 4rem;
+  --sidebar-transition: transform 0.25s ease;
+  --font-size-tablet: 18px;
+  --font-size-desktop: 24px;
+  --font-size-desktop-compact: 20px;
+  --content-width-tablet: 44rem;
+  --content-offset-tablet: 20rem;
+  --content-gutter-tablet: 2rem;
+  --sidebar-width-tablet: 30vw;
+}
+
+body {
+  --contrast-color: var(--color-ink);
+  --sidebar-contrast-color: var(--color-white);
+  --text-mix: color-mix(in srgb, var(--contrast-color) var(--mix-text), var(--post-color));
+  --heading-color: color-mix(in srgb, var(--contrast-color) var(--mix-heading), var(--post-color));
+  --link-color: color-mix(in srgb, var(--contrast-color) var(--mix-link), var(--post-color));
+  --muted-color: color-mix(in srgb, var(--contrast-color) var(--mix-muted), var(--post-color));
+  --subtle-color: color-mix(in srgb, var(--contrast-color) var(--mix-subtle), var(--post-color));
+  --border-color: color-mix(in srgb, var(--contrast-color) var(--mix-border), var(--post-color));
+  --bg-mix: color-mix(in srgb, var(--contrast-color) var(--mix-background), var(--post-color));
+  --bg-mix-2: color-mix(in srgb, var(--contrast-color) var(--mix-background-strong), var(--post-color));
+  --code-bg: color-mix(in srgb, var(--contrast-color) var(--mix-code), var(--post-color));
+  --syntax-strong: color-mix(in srgb, var(--contrast-color) var(--mix-syntax-strong), var(--post-color));
+  --syntax-medium: color-mix(in srgb, var(--contrast-color) var(--mix-syntax-medium), var(--post-color));
+  --syntax-soft: color-mix(in srgb, var(--contrast-color) var(--mix-syntax-soft), var(--post-color));
+  --syntax-faint: color-mix(in srgb, var(--contrast-color) var(--mix-syntax-faint), var(--post-color));
+  --sidebar-text: color-mix(in srgb, var(--sidebar-contrast-color) var(--mix-sidebar-text), var(--sidebar-color));
+  --sidebar-muted: color-mix(in srgb, var(--sidebar-contrast-color) var(--mix-sidebar-muted), var(--sidebar-color));
+}
+
+@supports (color: contrast-color(white)) {
+  body {
+    --contrast-color: contrast-color(var(--post-color));
+    --sidebar-contrast-color: contrast-color(var(--sidebar-color));
+  }
+}

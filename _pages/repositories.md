@@ -12,7 +12,7 @@ pagination:
 ---
 
 <div class="posts">
-  <h2>Repositories</h2>
+  <h2 class="repository-heading">Repositories</h2>
 
   {% for post in paginator.posts %}
     <div class="post-home">

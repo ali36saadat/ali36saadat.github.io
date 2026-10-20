@@ -4,7 +4,7 @@ title: Home
 backcolor: "#ECECEC"
 ---
 <div class="posts-home">
-  <h2>Posts</h2>
+  <h2 class="repository-heading">Posts</h2>
 
   {% assign posts = site.posts | where_exp: "post", "post.categories contains 'posts'" %}
 
@@ -27,7 +27,7 @@ backcolor: "#ECECEC"
 </div>
 
 <div class="posts-home">
-  <h2>Repositories</h2>
+  <h2 class="repository-heading">Repositories</h2>
 
   {% assign repositories = site.posts | where_exp: "post", "post.categories contains 'repositories'" %}
 
