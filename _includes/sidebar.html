@@ -7,7 +7,7 @@
       <nav class="mobile-menu-panel" aria-label="Main navigation">
         <div class="sidebar-nav-links">
           <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
-          <a class="sidebar-nav-item{% if page.url == '/repositories/' %} active{% endif %}" href="{{ '/repositories/' | relative_url }}">Repositories</a>
+          <a class="sidebar-nav-item{% if page.url == '/repositories/' or page.url contains '/repositories/' %} active{% endif %}" href="{{ '/repositories/' | relative_url }}">Repositories</a>
           <a class="sidebar-nav-item{% if page.url == '/posts/' or page.url contains '/posts/' %} active{% endif %}" href="{{ '/posts/' | relative_url }}">Posts</a>
         </div>
       </nav>
@@ -39,7 +39,7 @@
         </a>
 
         <a
-          class="sidebar-nav-item{% if page.url == '/repositories/' %} active{% endif %}"
+          class="sidebar-nav-item{% if page.url == '/repositories/' or page.url contains '/repositories/' %} active{% endif %}"
           href="{{ '/repositories/' | relative_url }}">
           Repositories
         </a>
