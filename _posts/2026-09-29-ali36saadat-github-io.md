@@ -3,8 +3,6 @@ layout: post
 title:  "Ali36Saadat.github.io"
 excerpt: "My Personal Website"
 image: "https://github.com/user-attachments/assets/62105750-a93b-4d80-aeb1-d81878c68cc9"
-color: "#FFFFFF"
-backcolor: "#151515"
 date: 2026-10-06
 categories: repositories
 toc: true
