@@ -23,7 +23,7 @@
   /* Base palette */
   --color-ink: #171717;
   --color-white: #ffffff;
-  --color-page: #fafafa;
+  --color-page: #ffffff;
   --mix-text: 94%;
   --mix-heading: 96%;
   --mix-link: 86%;
@@ -59,7 +59,7 @@
   --content-offset-wide: 22rem;
   --content-gutter: 2rem;
   --content-gutter-wide: 4rem;
-  --sidebar-transition: transform 0.25s ease;
+  --sidebar-transition: transform 5s ease;
   --font-size-tablet: 18px;
   --font-size-desktop: 24px;
   --font-size-desktop-compact: 20px;
