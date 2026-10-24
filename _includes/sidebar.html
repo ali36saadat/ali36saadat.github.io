@@ -13,9 +13,9 @@
       </nav>
     </div>
   </details>
-  {% if page.url == '/' or page.url == '/repositories/' or page.url == '/posts/' %}
+  {% if page.url == '/' or page.url == '/repositories/' or page.url == '/posts/' or page.url == '/cv/' or page.url == '/404' %}
     <span class="site-section-label">
-      {% if page.url == '/' %}Home{% elsif page.url == '/repositories/' %}Repositories{% else %}Posts{% endif %}
+      {% if page.url == '/' %}Home{% elsif page.url == '/repositories/' %}Repositories{% elsif page.url == '/posts/' %}Posts{% elsif page.url == '/cv/' %}CV{% else %}404{% endif %}
     </span>
   {% endif %}
 </div>
