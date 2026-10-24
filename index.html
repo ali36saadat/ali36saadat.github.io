@@ -1,52 +1,23 @@
 ---
 layout: default
 title: Home
-backcolor: "#ECECEC"
+backcolor: "#EDECED"
 ---
-<div class="posts-home">
-  <h2 class="repository-heading">Posts</h2>
+<div class="home-landing">
+  <div class="home-name">Hi there, I'm Ali Saadat</div>
+  <nav class="home-destinations" aria-label="Explore">
+    <a class="home-destination home-repositories-link" href="{{ '/repositories/' | relative_url }}">
+      <h1>Repositories</h1>
+    </a>
+    <a class="home-destination home-posts-link" href="{{ '/posts/' | relative_url }}">
+      <h1>Posts</h1>
+    </a>
+    <a class="home-destination home-cv-link" href="{{ '/cv/' | relative_url }}">
+      <h1>CV</h1>
+    </a>
+  </nav>
 
-  {% assign posts = site.posts | where_exp: "post", "post.categories contains 'posts'" %}
-
-  {% for post in posts limit:3 %}
-    <div class="post-home">
-      <a class="" href="{{ post.url | relative_url }}">
-        <img class="post-img" src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-        <div class="post-info">
-          <h3  class="post-title">{{ post.title }}</h3>
-          <div class="post-excerpt">{{ post.excerpt }}</div>
-          <div class="post-date">{{ post.date | date_to_string }}</div>
-        </div>
-      </a>
-    </div>
-  {% endfor %}
-
-  <a class="button" href="{{ '/posts/' | relative_url }}">
-    View all posts
-  </a>
+  <footer class="home-footer">
+    {% include footer.html %}
+  </footer>
 </div>
-
-<div class="posts-home">
-  <h2 class="repository-heading">Repositories</h2>
-
-  {% assign repositories = site.posts | where_exp: "post", "post.categories contains 'repositories'" %}
-
-  {% for post in repositories limit:3 %}
-    <div class="post-home">
-      <a class="" href="{{ post.url | relative_url }}">
-        <img class="post-img" src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-        <div class="post-info">
-          <h3  class="post-title">{{ post.title }}</h3>
-          <div class="post-excerpt">{{ post.excerpt }}</div>
-          <div class="post-date">{{ post.date | date_to_string }}</div>
-        </div>
-      </a>
-    </div>
-  {% endfor %}
-
-  <a class="button" href="{{ '/repositories/' | relative_url }}">
-    View all repositories
-  </a>
-</div>
-
-
