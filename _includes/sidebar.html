@@ -1,63 +1,33 @@
-<div class="sidebar">
-  <div class="mobile-sidebar-controls">
-    <div class="mobile-disclosure mobile-site-menu">
-      <a class="mobile-control mobile-site-toggle mobile-site-open" id="mobile-site-open" href="#mobile-site-open">≡ {{ site.title }}</a>
-      <a class="mobile-control mobile-site-toggle mobile-site-close" href="#mobile-site-closed">× {{ site.title }}</a>
-      <span class="mobile-site-closed-target" id="mobile-site-closed" aria-hidden="true"></span>
-      <nav class="mobile-menu-panel" aria-label="Main navigation">
-        <div class="sidebar-nav-links">
-          <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
-          <a class="sidebar-nav-item{% if page.url == '/repositories/' or page.url contains '/repositories/' %} active{% endif %}" href="{{ '/repositories/' | relative_url }}">Repositories</a>
-          <a class="sidebar-nav-item{% if page.url == '/posts/' or page.url contains '/posts/' %} active{% endif %}" href="{{ '/posts/' | relative_url }}">Posts</a>
-        </div>
+<div class="sidebar disclosure-shell">
+  <details class="disclosure-panel site-disclosure">
+    <summary class="disclosure-toggle" aria-label="Toggle main navigation">
+      <span class="site-menu-icon" aria-hidden="true">☰</span>
+    </summary>
+    <div class="disclosure-content site-disclosure-content">
+      <h1 class="disclosure-title">{{ site.title }}</h1>
+      <nav class="disclosure-nav" aria-label="Main navigation">
+        <a class="disclosure-link{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+        <a class="disclosure-link{% if page.url == '/repositories/' or page.url contains '/repositories/' %} active{% endif %}" href="{{ '/repositories/' | relative_url }}">Repositories</a>
+        <a class="disclosure-link{% if page.url == '/posts/' or page.url contains '/posts/' %} active{% endif %}" href="{{ '/posts/' | relative_url }}">Posts</a>
+        <a class="disclosure-link{% if page.url == '/cv/' %} active{% endif %}" href="{{ '/cv/' | relative_url }}">CV</a>
       </nav>
     </div>
-    {% if page.layout == "post" %}
-      <div class="mobile-disclosure mobile-toc-menu">
-        <a class="mobile-control mobile-toc-toggle mobile-toc-open" id="mobile-toc-open" href="#mobile-toc-open">Content ≡</a>
-        <a class="mobile-control mobile-toc-toggle mobile-toc-close" href="#mobile-toc-closed">Content ×</a>
-        <span class="mobile-toc-closed-target" id="mobile-toc-closed" aria-hidden="true"></span>
-        <div class="mobile-toc-panel">
-          {% toc %}
-        </div>
-      </div>
-    {% endif %}
-  </div>
-
-  <div class="sidebar-sticky">
-    <nav class="sidebar-nav" id="site-navigation">
-      <div class="sidebar-about">
-        <h1>
-          {{ site.title }}
-        </h1>
-      </div>
-      <div class="sidebar-nav-links">
-        <a
-          class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}"
-          href="{{ '/' | relative_url }}">
-          Home
-        </a>
-
-        <a
-          class="sidebar-nav-item{% if page.url == '/repositories/' or page.url contains '/repositories/' %} active{% endif %}"
-          href="{{ '/repositories/' | relative_url }}">
-          Repositories
-        </a>
-
-        <a
-          class="sidebar-nav-item{% if page.url == '/posts/' or page.url contains '/posts/' %} active{% endif %}"
-          href="{{ '/posts/' | relative_url }}">
-          Posts
-        </a>
-      </div>
-    </nav>
-
-
-    {% if page.layout == "post" %}
-      <nav class="sidebar-toc">
-        <h1 class="sidebar-toc-title">Content</h1>
-        {% toc %}
-      </nav>
-    {% endif %}
-  </div>
+  </details>
+  {% if page.url == '/' or page.url == '/repositories/' or page.url == '/posts/' %}
+    <span class="site-section-label">
+      {% if page.url == '/' %}Home{% elsif page.url == '/repositories/' %}Repositories{% else %}Posts{% endif %}
+    </span>
+  {% endif %}
 </div>
+
+{% if page.layout == "post" %}
+  <details class="disclosure-panel content-disclosure">
+    <summary class="disclosure-toggle" aria-label="Toggle page contents">
+      <span aria-hidden="true">C</span>
+    </summary>
+    <div class="disclosure-content content-disclosure-content">
+      <h1 class="disclosure-title">Content</h1>
+      {% toc %}
+    </div>
+  </details>
+{% endif %}
