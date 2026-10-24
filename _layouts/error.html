@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en-us">
   {% include head.html %}
-  <body style="--post-color: {{ page.backcolor | default: '#fafafa' }};">
+  <body style="--post-color: {{ page.backcolor | default: '#fafafa' }}; --sidebar-color: {{ page.color | default: '#141414' }};">
+    {% include sidebar.html %}
     {{ content }}
+    <script src="{{ '/assets/js/content-navigation.js' | relative_url }}"></script>
   </body>
 </html>
