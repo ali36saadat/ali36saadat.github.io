@@ -7,10 +7,11 @@
 
     {% include sidebar.html %}
 
-    <div class="content container">
+    <div class="content container{% if page.url == '/' %} content-home{% endif %}">
       {{ content }}
     </div>
     
     </main>
+    <script src="{{ '/assets/js/content-navigation.js' | relative_url }}"></script>
   </body>
 </html>
