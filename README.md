@@ -1,5 +1,5 @@
 # My Personal Website
-[![Header](https://github.com/user-attachments/assets/62105750-a93b-4d80-aeb1-d81878c68cc9)](https://ali36saadat.github.io/repositories/ali36saadat.github.io)
+[![Header](https://github.com/user-attachments/assets/f8d45292-2cd2-4b5b-934a-33369459249d)](https://ali36saadat.github.io/repositories/ali36saadat.github.io)
 
 ## Usage
 **Requirements:** `ruby` 3.0.0 or higher, GCC and Make (check versions using `gcc -v`,`g++ -v`, and `make -v`)
