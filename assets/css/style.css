@@ -490,6 +490,7 @@ tbody tr:nth-child(odd) th {
   justify-self: center;
   padding: 0.6rem 0.9rem;
   color: var(--link-color);
+  font-family: var(--font-sidebar);
   font-size: 0.95rem;
 }
 
@@ -550,6 +551,7 @@ tbody tr:nth-child(odd) th {
   left: 50%;
   padding: 0.6rem 0.9rem;
   color: var(--link-color);
+  font-family: var(--font-sidebar);
   font-size: 0.95rem;
   transform: translateX(-50%);
 }
@@ -557,6 +559,34 @@ tbody tr:nth-child(odd) th {
 .cv-home:focus-visible {
   outline: 2px solid var(--link-color);
   outline-offset: 3px;
+}
+
+@media (max-width: 47.99em) {
+  .cv-intro-heading h1 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .cv-intro-heading p,
+  .cv-scroll-prompt {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .cv-intro-image {
+    width: min(85%, 14rem);
+    max-height: 24svh;
+  }
+}
+
+.not-found-message,
+.not-found-message h1,
+.not-found-message p,
+.cv-intro-heading,
+.cv-intro-heading h1,
+.cv-intro-heading p,
+.cv-intro-image,
+.cv-scroll-prompt {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 @media (min-width: 48em) and (max-width: 63.99em) {
