@@ -7,16 +7,19 @@
       <h1 class="disclosure-title">{{ site.title }}</h1>
       <nav class="disclosure-nav" aria-label="Main navigation">
         <a class="disclosure-link{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+        {% comment %}Publications temporarily hidden.{% endcomment %}
+        {% comment %}
         <a class="disclosure-link{% if page.url == '/publications/' %} active{% endif %}" href="{{ '/publications/' | relative_url }}">Publications</a>
+        {% endcomment %}
         <a class="disclosure-link{% if page.url == '/repositories/' or page.url contains '/repositories/' %} active{% endif %}" href="{{ '/repositories/' | relative_url }}">Repositories</a>
         <a class="disclosure-link{% if page.url == '/posts/' or page.url contains '/posts/' %} active{% endif %}" href="{{ '/posts/' | relative_url }}">Posts</a>
         <a class="disclosure-link{% if page.url == '/cv/' %} active{% endif %}" href="{{ '/cv/' | relative_url }}">CV</a>
       </nav>
     </div>
   </details>
-  {% if page.url == '/' or page.url == '/repositories/' or page.url == '/publications/' or page.url == '/posts/' or page.url == '/cv/' %}
+  {% if page.url == '/' or page.url == '/repositories/' or page.url == '/posts/' or page.url == '/cv/' %}
     <span class="site-section-label">
-      {% if page.url == '/' %}Home{% elsif page.url == '/repositories/' %}Repositories{% elsif page.url == '/publications/' %}Publications{% elsif page.url == '/posts/' %}Posts{% else %}CV{% endif %}
+      {% if page.url == '/' %}Home{% elsif page.url == '/repositories/' %}Repositories{% elsif page.url == '/posts/' %}Posts{% else %}CV{% endif %}
     </span>
   {% endif %}
 </div>
